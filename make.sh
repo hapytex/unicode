@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 wget -r 'https://www.unicode.org/charts/PDF/'  --accept-regex 'www.unicode.org/charts/PDF/U[0-9A-F]{4,6}.pdf$'
 
 cd 'www.unicode.org/charts/PDF/'
