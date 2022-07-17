@@ -12,7 +12,7 @@ jobs:
     - name: install requirements
       run: sudo make install
     - name: Build a .pdf file
-      run: bash make.sh
+      run: make
     - name: Add cname to the directory
       uses: hapytex/github-actions/actions/add-cname-to-directory@master
       with:
