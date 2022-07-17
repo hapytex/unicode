@@ -2,7 +2,7 @@
 
 set -e
 
-wget -r 'https://www.unicode.org/charts/PDF/'  --accept-regex 'www.unicode.org/charts/PDF/U[0-9A-F]{4,6}.pdf$'
+wget -q -r 'https://www.unicode.org/charts/PDF/'  --accept-regex 'www.unicode.org/charts/PDF/U[0-9A-F]{4,6}.pdf$'
 
 cd 'www.unicode.org/charts/PDF/'
 rename -d 's/^U([0-9A-F]{4}).pdf$/U00$1.pdf/' *.pdf
