@@ -16,11 +16,11 @@ jobs:
     - name: Add cname to the directory
       uses: hapytex/github-actions/actions/add-cname-to-directory@master
       with:
-        folder: "${{ steps.haddock.outputs.haddock-path }}"
+        folder: out
         cname: "unicode.django-antipatterns.com"
     - name: deploy the .pdf.gz document
       uses: JamesIves/github-pages-deploy-action@4.0.0
       with:
         branch: gh-pages
-        folder: 'out'
+        folder: out
         single-commit: true
