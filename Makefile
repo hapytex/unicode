@@ -7,4 +7,4 @@ out/unicode.pdf: make.sh
 	bash make.sh
 
 %.gz: %
-	gzip "$^"
+	gzip -n --best "$^"

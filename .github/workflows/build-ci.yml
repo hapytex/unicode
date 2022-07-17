@@ -23,4 +23,5 @@ jobs:
       with:
         branch: gh-pages
         folder: out
+        lfs: true
         single-commit: true
