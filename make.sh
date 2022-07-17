@@ -8,7 +8,7 @@ cd 'www.unicode.org/charts/PDF/'
 rename -d 's/^U([0-9A-F]{4}).pdf$/U00$1.pdf/' *.pdf
 rename -d 's/^U([0-9A-F]{5}).pdf$/U0$1.pdf/' *.pdf
 
-gs -dNumRenderingThreads=4 -dDetectDuplicateImages -dEmbedAllFonts=true -dSubsetFonts=true -sColorConversionStrategy=/Mono -sColorConversionStrategyForImages=/Mono -sProcessColorModel=/DeviceGray -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=unicode.pdf U*.pdf
+gs -dNumRenderingThreads=4 -dDetectDuplicateImages -dEmbedAllFonts=true -dSubsetFonts=true -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=unicode.pdf U*.pdf
 cd ../../..
 
 mkdir -p 'out'
