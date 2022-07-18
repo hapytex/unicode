@@ -19,9 +19,8 @@ jobs:
         folder: out
         cname: "unicode.django-antipatterns.com"
     - name: deploy the .pdf.gz document
-      uses: JamesIves/github-pages-deploy-action@4.3.4
+      uses: JamesIves/github-pages-deploy-action@v4.3.4
       with:
         branch: gh-pages
         folder: out
-        lfs: true
         single-commit: true
