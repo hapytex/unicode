@@ -18,4 +18,4 @@ cd "$dr"
 mkdir -p 'out'
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=out/unicode.pdf "$tmp/www.unicode.org/charts/PDF/unicode.pdf"
 
-mv "$tmp"
+rm -rf "$tmp"
