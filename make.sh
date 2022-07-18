@@ -2,15 +2,20 @@
 
 set -e
 
+dr=$(pwd)
+
+tmp=$(mktemp -d)
+cd "$tmp"
 wget -q -r 'https://www.unicode.org/charts/PDF/'  --accept-regex 'www.unicode.org/charts/PDF/U[0-9A-F]{4,6}.pdf$'
 
 cd 'www.unicode.org/charts/PDF/'
 rename -d 's/^U([0-9A-F]{4}).pdf$/U00$1.pdf/' *.pdf
 rename -d 's/^U([0-9A-F]{5}).pdf$/U0$1.pdf/' *.pdf
 
-gs -dNumRenderingThreads=4 -dDetectDuplicateImages -dEmbedAllFonts=true -dSubsetFonts=true -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=unicode.pdf U*.pdf
-cd ../../..
+qpdf U*.pdf unicode.pdf
 
+cd "$dr"
 mkdir -p 'out'
-mv 'www.unicode.org/charts/PDF/unicode.pdf' 'out/unicode.pdf'
-rm -rf 'www.unicode.org'
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=out/unicode.pdf "$tmp/www.unicode.org/charts/PDF/unicode.pdf"
+
+mv "$tmp"
