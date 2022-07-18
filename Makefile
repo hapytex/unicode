@@ -1,4 +1,4 @@
-all: out/unicode.pdf.gz out/unicode-dark.pdf.gz
+all: out/unicode.pdf.gz
 
 install:
 	apt-get install -y ghostscript qpdf rename
