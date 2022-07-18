@@ -12,7 +12,7 @@ cd 'www.unicode.org/charts/PDF/'
 rename -d 's/^U([0-9A-F]{4}).pdf$/U00$1.pdf/' *.pdf
 rename -d 's/^U([0-9A-F]{5}).pdf$/U0$1.pdf/' *.pdf
 
-qpdf U*.pdf unicode.pdf
+qpdf --empty --pages U*.pdf unicode.pdf
 
 cd "$dr"
 mkdir -p 'out'
