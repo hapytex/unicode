@@ -10,4 +10,4 @@ out/unicode.pdf: make.sh
 	gs -o "$@" -sDEVICE=pdfwrite -c "{1 exch sub}{1 exch sub}{1 exch sub}{1 exch sub} setcolortransfer" -f "$^"
 
 %.gz: %
-	gzip -k -n --best "$^"
+	gzip -n --best "$^"

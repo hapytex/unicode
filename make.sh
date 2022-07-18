@@ -16,6 +16,6 @@ qpdf --empty --pages U*.pdf -- unicode.pdf
 
 cd "$dr"
 mkdir -p 'out'
-gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=out/unicode.pdf "$tmp/www.unicode.org/charts/PDF/unicode.pdf"
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -sOutputFile=out/unicode.pdf "$tmp/www.unicode.org/charts/PDF/unicode.pdf"
 
 rm -rf "$tmp"
